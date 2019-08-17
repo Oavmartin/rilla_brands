@@ -53,6 +53,14 @@ class ProductvariantsController < ApplicationController
     end
   end
 
+  def destroy_row_from_product
+    @productvariant = Productvariant.find(params.fetch("id_to_remove"))
+
+    @productvariant.destroy
+
+    redirect_to("/products/#{@productvariant.product_id}", notice: "Productvariant deleted successfully.")
+  end
+
   def destroy_row
     @productvariant = Productvariant.find(params.fetch("id_to_remove"))
 

@@ -55,6 +55,14 @@ class BrandsController < ApplicationController
     end
   end
 
+  def destroy_row_from_organization
+    @brand = Brand.find(params.fetch("id_to_remove"))
+
+    @brand.destroy
+
+    redirect_to("/organizations/#{@brand.organization_id}", notice: "Brand deleted successfully.")
+  end
+
   def destroy_row
     @brand = Brand.find(params.fetch("id_to_remove"))
 

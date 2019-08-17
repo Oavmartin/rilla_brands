@@ -55,6 +55,14 @@ class ProductlinesController < ApplicationController
     end
   end
 
+  def destroy_row_from_brand
+    @productline = Productline.find(params.fetch("id_to_remove"))
+
+    @productline.destroy
+
+    redirect_to("/brands/#{@productline.brand_id}", notice: "Productline deleted successfully.")
+  end
+
   def destroy_row
     @productline = Productline.find(params.fetch("id_to_remove"))
 

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_productvariant/:id_to_remove", { :controller => "productvariants", :action => "destroy_row" })
+  get("/delete_productvariant_from_product/:id_to_remove", { :controller => "productvariants", :action => "destroy_row_from_product" })
 
   #------------------------------
 
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_productline/:id_to_remove", { :controller => "productlines", :action => "destroy_row" })
+  get("/delete_productline_from_brand/:id_to_remove", { :controller => "productlines", :action => "destroy_row_from_brand" })
 
   #------------------------------
 
@@ -55,6 +57,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_product/:id_to_remove", { :controller => "products", :action => "destroy_row" })
+  get("/delete_product_from_productline/:id_to_remove", { :controller => "products", :action => "destroy_row_from_productline" })
 
   #------------------------------
 
@@ -93,6 +96,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_brand/:id_to_remove", { :controller => "brands", :action => "destroy_row" })
+  get("/delete_brand_from_organization/:id_to_remove", { :controller => "brands", :action => "destroy_row_from_organization" })
 
   #------------------------------
 
