@@ -62,7 +62,11 @@
 
         <!-- Display product.productline_id start -->
         <td>
-          <%= product.productline.brand_id %>
+          <% if product.productline.present? %>
+            <a href="/productlines/<%= product.productline.id %>">
+              <%= product.productline.brand_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display product.productline_id end -->
 

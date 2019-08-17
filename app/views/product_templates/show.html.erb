@@ -34,7 +34,11 @@
       </dt>
       <!-- Display productline_id start -->
       <dd>
-        <%= @product.productline_id %>
+        <% if @product.productline.present? %>
+          <a href="/productlines/<%= @product.productline_id %>">
+            <%= @product.productline.brand_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display productline_id end -->
 

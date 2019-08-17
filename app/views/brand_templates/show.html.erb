@@ -43,7 +43,11 @@
       </dt>
       <!-- Display organization_id start -->
       <dd>
-        <%= @brand.organization_id %>
+        <% if @brand.organization.present? %>
+          <a href="/organizations/<%= @brand.organization_id %>">
+            <%= @brand.organization.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display organization_id end -->
 

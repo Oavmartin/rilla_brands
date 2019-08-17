@@ -34,7 +34,11 @@
       </dt>
       <!-- Display product_id start -->
       <dd>
-        <%= @productvariant.product_id %>
+        <% if @productvariant.product.present? %>
+          <a href="/products/<%= @productvariant.product_id %>">
+            <%= @productvariant.product.productline_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display product_id end -->
 
