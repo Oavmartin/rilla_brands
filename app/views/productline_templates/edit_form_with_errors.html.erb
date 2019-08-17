@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for brand_id start -->
-    <input type="text" id="brand_id" name="brand_id" class="form-control" value="<%= @productline.brand_id %>">
+    <%= select_tag(:brand_id, options_from_collection_for_select(Brand.all, :id, :name, @productline.brand_id), :class => "form-control") %>
     <!-- Input for brand_id end -->
   </div>
   <!-- Label and input for brand_id end -->
