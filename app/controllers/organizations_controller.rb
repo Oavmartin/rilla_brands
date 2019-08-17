@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
   def index
-    @organizations = Organization.all
+    @organizations = Organization.page(params[:page]).per(10)
 
     render("organization_templates/index.html.erb")
   end

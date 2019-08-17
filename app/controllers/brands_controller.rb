@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
   def index
-    @brands = Brand.all
+    @brands = Brand.page(params[:page]).per(10)
 
     render("brand_templates/index.html.erb")
   end

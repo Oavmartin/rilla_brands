@@ -1,6 +1,6 @@
 class ProductvariantsController < ApplicationController
   def index
-    @productvariants = Productvariant.all
+    @productvariants = Productvariant.page(params[:page]).per(10)
 
     render("productvariant_templates/index.html.erb")
   end
