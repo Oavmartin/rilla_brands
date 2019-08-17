@@ -1,0 +1,29 @@
+<!-- Validation failure messages -->
+<% if @organization.errors.any? %>
+  <% @organization.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit organization #<%= @organization.id %>
+</h1>
+
+<hr>
+
+<!-- Form organization start -->
+<form action="/update_organization/<%= @organization.id %>" method="post">
+<!-- Form organization end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update organization
+  </button>
+</form>
+
+<hr>
+
+<a href="/organizations">
+  Go back
+</a>

@@ -1,0 +1,32 @@
+<!-- Validation failure messages -->
+<% if @organization.present? %>
+  <% if @organization.errors.any? %>
+    <% @organization.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new organization
+</h1>
+
+
+<hr>
+
+<!-- Form organization start -->
+<form action="/create_organization" method="post">
+<!-- Form organization end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create organization
+  </button>
+</form>
+
+<hr>
+
+<a href="/organizations">
+  Go back
+</a>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Organization resource:
+
+  # CREATE
+  get("/organizations/new", { :controller => "organizations", :action => "new_form" })
+  post("/create_organization", { :controller => "organizations", :action => "create_row" })
+
+  # READ
+  get("/organizations", { :controller => "organizations", :action => "index" })
+  get("/organizations/:id_to_display", { :controller => "organizations", :action => "show" })
+
+  # UPDATE
+  get("/organizations/:prefill_with_id/edit", { :controller => "organizations", :action => "edit_form" })
+  post("/update_organization/:id_to_modify", { :controller => "organizations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_organization/:id_to_remove", { :controller => "organizations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Brand resource:
 
   # CREATE
