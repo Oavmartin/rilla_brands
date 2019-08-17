@@ -4,6 +4,8 @@ RSpec.describe Productline, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:products) }
+
     it { should belong_to(:brand) }
 
     end
