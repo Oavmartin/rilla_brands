@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Productline resource:
+
+  # CREATE
+  get("/productlines/new", { :controller => "productlines", :action => "new_form" })
+  post("/create_productline", { :controller => "productlines", :action => "create_row" })
+
+  # READ
+  get("/productlines", { :controller => "productlines", :action => "index" })
+  get("/productlines/:id_to_display", { :controller => "productlines", :action => "show" })
+
+  # UPDATE
+  get("/productlines/:prefill_with_id/edit", { :controller => "productlines", :action => "edit_form" })
+  post("/update_productline/:id_to_modify", { :controller => "productlines", :action => "update_row" })
+
+  # DELETE
+  get("/delete_productline/:id_to_remove", { :controller => "productlines", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Product resource:
 
   # CREATE
