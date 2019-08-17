@@ -1,4 +1,6 @@
 ActiveAdmin.register Productline do
+
+ permit_params :brand_id, :name, :characteristics
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
