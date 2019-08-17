@@ -4,6 +4,8 @@ RSpec.describe Product, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:productvariants) }
+
     end
 
     describe "InDirect Associations" do
