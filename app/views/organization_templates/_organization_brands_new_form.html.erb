@@ -1,0 +1,37 @@
+<!-- Form brand start -->
+<form action="/create_brand_from_organization" method="post">
+<!-- Form brand end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @brand.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for organization_id start -->
+  <!-- Input for organization_id start -->
+  <input type="hidden" name="organization_id" value="<%= @organization.id %>">
+  <!-- Input for organization_id end -->
+
+  <!-- Label and input for characteristics start -->
+  <div class="form-group">
+    <label for="characteristics">
+      Characteristics
+    </label>
+
+    <!-- Input for characteristics start -->
+    <input type="text" id="characteristics" name="characteristics" class="form-control" value="<%= @brand.characteristics %>">
+    <!-- Input for characteristics end -->
+  </div>
+  <!-- Label and input for characteristics end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create brand
+  </button>
+</form>

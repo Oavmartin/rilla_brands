@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/productvariants/new", { :controller => "productvariants", :action => "new_form" })
   post("/create_productvariant", { :controller => "productvariants", :action => "create_row" })
+  post("/create_productvariant_from_product", { :controller => "productvariants", :action => "create_row_from_product" })
 
   # READ
   get("/productvariants", { :controller => "productvariants", :action => "index" })
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/productlines/new", { :controller => "productlines", :action => "new_form" })
   post("/create_productline", { :controller => "productlines", :action => "create_row" })
+  post("/create_productline_from_brand", { :controller => "productlines", :action => "create_row_from_brand" })
 
   # READ
   get("/productlines", { :controller => "productlines", :action => "index" })
@@ -46,6 +48,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/products/new", { :controller => "products", :action => "new_form" })
   post("/create_product", { :controller => "products", :action => "create_row" })
+  post("/create_product_from_productline", { :controller => "products", :action => "create_row_from_productline" })
 
   # READ
   get("/products", { :controller => "products", :action => "index" })
@@ -85,6 +88,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/brands/new", { :controller => "brands", :action => "new_form" })
   post("/create_brand", { :controller => "brands", :action => "create_row" })
+  post("/create_brand_from_organization", { :controller => "brands", :action => "create_row_from_organization" })
 
   # READ
   get("/brands", { :controller => "brands", :action => "index" })

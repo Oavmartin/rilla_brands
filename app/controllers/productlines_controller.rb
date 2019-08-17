@@ -6,6 +6,7 @@ class ProductlinesController < ApplicationController
   end
 
   def show
+    @product = Product.new
     @productline = Productline.find(params.fetch("id_to_display"))
 
     render("productline_templates/show.html.erb")
@@ -28,6 +29,22 @@ class ProductlinesController < ApplicationController
       @productline.save
 
       redirect_back(:fallback_location => "/productlines", :notice => "Productline created successfully.")
+    else
+      render("productline_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_brand
+    @productline = Productline.new
+
+    @productline.brand_id = params.fetch("brand_id")
+    @productline.name = params.fetch("name")
+    @productline.characteristics = params.fetch("characteristics")
+
+    if @productline.valid?
+      @productline.save
+
+      redirect_to("/brands/#{@productline.brand_id}", notice: "Productline created successfully.")
     else
       render("productline_templates/new_form_with_errors.html.erb")
     end

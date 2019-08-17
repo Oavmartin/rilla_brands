@@ -32,6 +32,21 @@ class ProductvariantsController < ApplicationController
     end
   end
 
+  def create_row_from_product
+    @productvariant = Productvariant.new
+
+    @productvariant.product_id = params.fetch("product_id")
+    @productvariant.characteristics = params.fetch("characteristics")
+
+    if @productvariant.valid?
+      @productvariant.save
+
+      redirect_to("/products/#{@productvariant.product_id}", notice: "Productvariant created successfully.")
+    else
+      render("productvariant_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @productvariant = Productvariant.find(params.fetch("prefill_with_id"))
 

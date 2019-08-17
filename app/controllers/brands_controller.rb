@@ -6,6 +6,7 @@ class BrandsController < ApplicationController
   end
 
   def show
+    @productline = Productline.new
     @brand = Brand.find(params.fetch("id_to_display"))
 
     render("brand_templates/show.html.erb")
@@ -28,6 +29,22 @@ class BrandsController < ApplicationController
       @brand.save
 
       redirect_back(:fallback_location => "/brands", :notice => "Brand created successfully.")
+    else
+      render("brand_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_organization
+    @brand = Brand.new
+
+    @brand.name = params.fetch("name")
+    @brand.organization_id = params.fetch("organization_id")
+    @brand.characteristics = params.fetch("characteristics")
+
+    if @brand.valid?
+      @brand.save
+
+      redirect_to("/organizations/#{@brand.organization_id}", notice: "Brand created successfully.")
     else
       render("brand_templates/new_form_with_errors.html.erb")
     end

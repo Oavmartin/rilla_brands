@@ -6,6 +6,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
+    @brand = Brand.new
     @organization = Organization.find(params.fetch("id_to_display"))
 
     render("organization_templates/show.html.erb")

@@ -1,0 +1,25 @@
+<!-- Form productvariant start -->
+<form action="/create_productvariant_from_product" method="post">
+<!-- Form productvariant end -->
+
+  <!-- Label and input for product_id start -->
+  <!-- Input for product_id start -->
+  <input type="hidden" name="product_id" value="<%= @product.id %>">
+  <!-- Input for product_id end -->
+
+  <!-- Label and input for characteristics start -->
+  <div class="form-group">
+    <label for="characteristics">
+      Characteristics
+    </label>
+
+    <!-- Input for characteristics start -->
+    <input type="text" id="characteristics" name="characteristics" class="form-control" value="<%= @productvariant.characteristics %>">
+    <!-- Input for characteristics end -->
+  </div>
+  <!-- Label and input for characteristics end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create productvariant
+  </button>
+</form>

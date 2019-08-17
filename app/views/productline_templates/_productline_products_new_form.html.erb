@@ -1,0 +1,37 @@
+<!-- Form product start -->
+<form action="/create_product_from_productline" method="post">
+<!-- Form product end -->
+
+  <!-- Label and input for productline_id start -->
+  <!-- Input for productline_id start -->
+  <input type="hidden" name="productline_id" value="<%= @productline.id %>">
+  <!-- Input for productline_id end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @product.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for characteristics start -->
+  <div class="form-group">
+    <label for="characteristics">
+      Characteristics
+    </label>
+
+    <!-- Input for characteristics start -->
+    <input type="text" id="characteristics" name="characteristics" class="form-control" value="<%= @product.characteristics %>">
+    <!-- Input for characteristics end -->
+  </div>
+  <!-- Label and input for characteristics end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create product
+  </button>
+</form>
