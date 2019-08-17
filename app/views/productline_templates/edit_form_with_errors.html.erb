@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @productline.errors.any? %>
   <% @productline.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,45 +12,31 @@
 
 <hr>
 
-<!-- Form productline start -->
 <form action="/update_productline/<%= @productline.id %>" method="post">
-<!-- Form productline end -->
 
-  <!-- Label and input for brand_id start -->
   <div class="form-group">
     <label for="brand_id">
       Brand
     </label>
 
-    <!-- Input for brand_id start -->
     <%= select_tag(:brand_id, options_from_collection_for_select(Brand.all, :id, :name, @productline.brand_id), :class => "form-control") %>
-    <!-- Input for brand_id end -->
   </div>
-  <!-- Label and input for brand_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @productline.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for characteristics start -->
   <div class="form-group">
     <label for="characteristics">
       Characteristics
     </label>
 
-    <!-- Input for characteristics start -->
     <input type="text" id="characteristics" name="characteristics" class="form-control" value="<%= @productline.characteristics %>">
-    <!-- Input for characteristics end -->
   </div>
-  <!-- Label and input for characteristics end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update productline

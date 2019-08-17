@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link product start -->
       <div class="col">
         <a href="/products/<%= @product.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit product
         </a>
       </div>
-      <!-- Edit link product end -->
 
-      <!-- Delete link product start -->
       <div class="col">
         <a href="/delete_product/<%= @product.id %>" class="btn btn-block btn-outline-secondary">
           Delete product
         </a>
       </div>
-      <!-- Delete link product end -->
     </div>
 
     <dl>
       <dt>
         Productline
       </dt>
-      <!-- Display productline_id start -->
       <dd>
         <% if @product.productline.present? %>
           <a href="/productlines/<%= @product.productline_id %>">
@@ -40,51 +35,40 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display productline_id end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @product.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Characteristics
       </dt>
-      <!-- Display characteristics start -->
       <dd>
         <%= @product.characteristics %>
       </dd>
-      <!-- Display characteristics end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@product.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@product.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "product_templates/product_productvariants" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

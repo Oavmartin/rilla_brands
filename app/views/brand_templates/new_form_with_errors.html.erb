@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @brand.present? %>
   <% if @brand.errors.any? %>
     <% @brand.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form brand start -->
 <form action="/create_brand" method="post">
-<!-- Form brand end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @brand.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for organization_id start -->
   <div class="form-group">
     <label for="organization_id">
       Organization
     </label>
 
-    <!-- Input for organization_id start -->
     <%= select_tag(:organization_id, options_from_collection_for_select(Organization.all, :id, :created_at, @brand.organization_id), :class => "form-control") %>
-    <!-- Input for organization_id end -->
   </div>
-  <!-- Label and input for organization_id end -->
 
-  <!-- Label and input for characteristics start -->
   <div class="form-group">
     <label for="characteristics">
       Characteristics
     </label>
 
-    <!-- Input for characteristics start -->
     <input type="text" id="characteristics" name="characteristics" class="form-control" value="<%= @brand.characteristics %>">
-    <!-- Input for characteristics end -->
   </div>
-  <!-- Label and input for characteristics end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create brand

@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link productvariant start -->
       <div class="col">
         <a href="/productvariants/<%= @productvariant.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit productvariant
         </a>
       </div>
-      <!-- Edit link productvariant end -->
 
-      <!-- Delete link productvariant start -->
       <div class="col">
         <a href="/delete_productvariant/<%= @productvariant.id %>" class="btn btn-block btn-outline-secondary">
           Delete productvariant
         </a>
       </div>
-      <!-- Delete link productvariant end -->
     </div>
 
     <dl>
       <dt>
         Product
       </dt>
-      <!-- Display product_id start -->
       <dd>
         <% if @productvariant.product.present? %>
           <a href="/products/<%= @productvariant.product_id %>">
@@ -40,37 +35,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display product_id end -->
 
       <dt>
         Characteristics
       </dt>
-      <!-- Display characteristics start -->
       <dd>
         <%= @productvariant.characteristics %>
       </dd>
-      <!-- Display characteristics end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@productvariant.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@productvariant.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

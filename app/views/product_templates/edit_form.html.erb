@@ -4,45 +4,31 @@
 
 <hr>
 
-<!-- Form product start -->
 <form action="/update_product/<%= @product.id %>" method="post">
-<!-- Form product end -->
 
-  <!-- Label and input for productline_id start -->
   <div class="form-group">
     <label for="productline_id">
       Productline
     </label>
 
-    <!-- Input for productline_id start -->
     <%= select_tag(:productline_id, options_from_collection_for_select(Productline.all, :id, :brand_id, @product.productline_id), :class => "form-control") %>
-    <!-- Input for productline_id end -->
   </div>
-  <!-- Label and input for productline_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @product.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for characteristics start -->
   <div class="form-group">
     <label for="characteristics">
       Characteristics
     </label>
 
-    <!-- Input for characteristics start -->
     <input type="text" id="characteristics" name="characteristics" class="form-control" value="<%= @product.characteristics %>">
-    <!-- Input for characteristics end -->
   </div>
-  <!-- Label and input for characteristics end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update product

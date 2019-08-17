@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @brand.productlines.each do |productline| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/productlines/<%= productline.id %>">
           <%= productline.brand_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_productline_from_brand/<%= productline.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="brand_productlines_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "brand_templates/brand_productlines_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

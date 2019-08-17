@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "brand_templates/brands_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,19 +54,14 @@
 
       <% @brands.each do |brand| %>
       <tr>
-        <!-- Display brand.id start -->
         <td>
           <%= brand.id %>
         </td>
-        <!-- Display brand.id end -->
 
-        <!-- Display brand.name start -->
         <td>
           <%= brand.name %>
         </td>
-        <!-- Display brand.name end -->
 
-        <!-- Display brand.organization_id start -->
         <td>
           <% if brand.organization.present? %>
             <a href="/organizations/<%= brand.organization.id %>">
@@ -78,25 +69,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display brand.organization_id end -->
 
-        <!-- Display brand.characteristics start -->
         <td>
           <%= brand.characteristics %>
         </td>
-        <!-- Display brand.characteristics end -->
 
-        <!-- Display brand.created_at start -->
         <td>
           <%= time_ago_in_words(brand.created_at) %> ago
         </td>
-        <!-- Display brand.created_at end -->
 
-        <!-- Display brand.updated_at start -->
         <td>
           <%= time_ago_in_words(brand.updated_at) %> ago
         </td>
-        <!-- Display brand.updated_at end -->
 
         <td>
           <a href="/brands/<%= brand.id %>">
