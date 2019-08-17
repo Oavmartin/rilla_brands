@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Brand #<%= @brand.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/brands" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link brand start -->
+      <div class="col">
+        <a href="/brands/<%= @brand.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit brand
+        </a>
+      </div>
+      <!-- Edit link brand end -->
+
+      <!-- Delete link brand start -->
+      <div class="col">
+        <a href="/delete_brand/<%= @brand.id %>" class="btn btn-block btn-outline-secondary">
+          Delete brand
+        </a>
+      </div>
+      <!-- Delete link brand end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @brand.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Organization
+      </dt>
+      <!-- Display organization_id start -->
+      <dd>
+        <%= @brand.organization_id %>
+      </dd>
+      <!-- Display organization_id end -->
+
+      <dt>
+        Characteristics
+      </dt>
+      <!-- Display characteristics start -->
+      <dd>
+        <%= @brand.characteristics %>
+      </dd>
+      <!-- Display characteristics end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@brand.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@brand.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
