@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Productvariant resource:
+
+  # CREATE
+  get("/productvariants/new", { :controller => "productvariants", :action => "new_form" })
+  post("/create_productvariant", { :controller => "productvariants", :action => "create_row" })
+
+  # READ
+  get("/productvariants", { :controller => "productvariants", :action => "index" })
+  get("/productvariants/:id_to_display", { :controller => "productvariants", :action => "show" })
+
+  # UPDATE
+  get("/productvariants/:prefill_with_id/edit", { :controller => "productvariants", :action => "edit_form" })
+  post("/update_productvariant/:id_to_modify", { :controller => "productvariants", :action => "update_row" })
+
+  # DELETE
+  get("/delete_productvariant/:id_to_remove", { :controller => "productvariants", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Productline resource:
 
   # CREATE

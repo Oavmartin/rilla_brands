@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @productvariant.errors.any? %>
+  <% @productvariant.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit productvariant #<%= @productvariant.id %>
+</h1>
+
+<hr>
+
+<!-- Form productvariant start -->
+<form action="/update_productvariant/<%= @productvariant.id %>" method="post">
+<!-- Form productvariant end -->
+
+  <!-- Label and input for product_id start -->
+  <div class="form-group">
+    <label for="product_id">
+      Product
+    </label>
+
+    <!-- Input for product_id start -->
+    <input type="text" id="product_id" name="product_id" class="form-control" value="<%= @productvariant.product_id %>">
+    <!-- Input for product_id end -->
+  </div>
+  <!-- Label and input for product_id end -->
+
+  <!-- Label and input for characteristics start -->
+  <div class="form-group">
+    <label for="characteristics">
+      Characteristics
+    </label>
+
+    <!-- Input for characteristics start -->
+    <input type="text" id="characteristics" name="characteristics" class="form-control" value="<%= @productvariant.characteristics %>">
+    <!-- Input for characteristics end -->
+  </div>
+  <!-- Label and input for characteristics end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update productvariant
+  </button>
+</form>
+
+<hr>
+
+<a href="/productvariants">
+  Go back
+</a>
